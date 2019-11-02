@@ -1,5 +1,5 @@
 const rock = document.querySelector('.rock')
-const papper = document.querySelector('.papper')
+const paper = document.querySelector('.paper')
 const scissors = document.querySelector('.scissors')
 const remark = document.querySelector('.remark')
 
@@ -22,8 +22,8 @@ function game(e) {
 
  // chec kwin
  const win = userChoice === "rock" && compChoice === "scissors"
- || userChoice === "papper" && compChoice === "rock"
- || userChoice === "scissors" && compChoice === "papper"
+ || userChoice === "paper" && compChoice === "rock"
+ || userChoice === "scissors" && compChoice === "paper"
 
  if (win) {
   remark.innerHTML = `${userChoice} beats ${compChoice} <span style="color:green">win</span`
@@ -34,8 +34,8 @@ function game(e) {
  }
 
  // check loss
- const loss = userChoice === "rock" && compChoice === "papper"
- || userChoice === "papper" && compChoice === "scissors"
+ const loss = userChoice === "rock" && compChoice === "paper"
+ || userChoice === "paper" && compChoice === "scissors"
  || userChoice === "scissors" && compChoice === "rock"
 
  if (loss) {
@@ -51,12 +51,12 @@ function game(e) {
 }
 
 function compTurn() {
- const compChoices = ["rock", "papper", "scissors"] 
+ const compChoices = ["rock", "paper", "scissors"] 
  const compChoice = Math.floor(Math.random() * 3)
  const result= compChoices[compChoice]
  return result
 }
 
 rock.addEventListener('click', game) 
-papper.addEventListener('click', game)
+paper.addEventListener('click', game)
 scissors.addEventListener('click', game)
