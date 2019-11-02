@@ -20,7 +20,7 @@ function game(e) {
   e.target.style.border = "10px solid silver"   
  }
 
- // chec kwin
+ // check win
  const win = userChoice === "rock" && compChoice === "scissors"
  || userChoice === "paper" && compChoice === "rock"
  || userChoice === "scissors" && compChoice === "paper"
